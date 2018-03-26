@@ -7,6 +7,7 @@ import {AppComponent} from "./app.component";
 import {ProximitySelector} from "./components/proximity-selector.component";
 import {SearchBox} from "./components/search-box.component";
 import {SearchReducer} from "./reducers/search.reducer";
+import { YouTubeService } from './services/youtube.service';
 
 const storeManager = provideStore({ currentSearch: SearchReducer });
 
@@ -20,7 +21,7 @@ const storeManager = provideStore({ currentSearch: SearchReducer });
     HttpModule,
     StoreModule, storeManager
   ],
-  providers: [],
+  providers: [YouTubeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
